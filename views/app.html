@@ -10,6 +10,89 @@
     <script src="../js/app.js" type="module" defer></script>
 </head>
 <body>
-    <h2>My nOtebook</h2>
+    <header id="my-notebook-header">
+        <section id="header-section-left">
+            <div id="header-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div id="header-input-field"></div>
+            </div>
+        </section>
+        <section id="header-section-center">
+            <a href="" id="header-tasks">
+                <span>Tasks</span>
+            </a>
+            <a href="" id="header-notes">
+                <span>Notes</span>
+            </a>
+        </section>
+        <section id="header-section-right">
+            <div id="header-login">
+                <i class="fa-solid fa-user">
+                    <span>Welcome, Tad!</span>
+                </i>
+                <i class="fa-regular fa-bell"></i>
+            </div>
+        </section>
+    </header>
+    <main id="my-notebook-main">
+        <section id="content-header">
+            <section class="types">
+                <span>All</span>
+                <span>Projects</span>
+                <span>Business</span>
+                <span>Personal</span>
+            </section>
+            <section class="actions">
+                <div id="add-note">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Add note</span>
+                </div>
+                <div id="edit-note">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Edit note</span>
+                </div>
+                <div id="delete-note">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>Delete note</span>
+                </div>
+            </section>
+        </section>
+        <section id="content">
+            <div>
+                <span>2024-01-01</span>
+                <h4>My note</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </section>
+    </main>
+    <footer id="my-notebook-footer">
+        <section id="footer-links">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/tadeuš-kuncevič-32576bbb/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/undefinedCudaCore?tab=repositories" target="_blank">
+                    <i class="fa-brands fa-github-alt"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCrKDSCwL8Dhd9MLuNfEitOw?view_as=subscriber" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/tadeush.kuncevich/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/teklithuania" target="_blank">
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/teklithuania/?hl=en" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a></div>
+        </section>
+        <section id="footer-copyright">
+            <span>Copyright © 2024 </span>
+            <a href="http://thaddeus.lt/">Thaddeus</a>
+            <span>, all rights reserved.</span>
+        </section>
+    </footer>
+    <script src="../js/logic/all.js"></script>
 </body>
 </html>
