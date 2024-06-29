@@ -1,0 +1,56 @@
+@import './styles/reset.css';
+@import './styles/style.css';
+
+
+
+#welcome-container{
+    display: inline-block;
+    border: 0.5px outset #f8f8f8;
+    box-shadow: 10px 10px 10px #8b89a1;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 30%;
+    background: linear-gradient(100deg, #a199e9 50%, #F8F8F8 60%);
+}
+
+#welcome-container-child{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    word-break:keep-all;
+    text-align: center;
+}
+
+#greeting-h2{
+    font-size: 30px;
+    word-break:keep-all;
+}
+
+#login-btn{
+    text-align: center;
+    width: 30%;
+    height: 35px;
+    border: 1px solid #8981D8;
+    box-shadow: 5px 5px 5px #9691c7;
+    border-radius: 7px;
+    background-color: #8981D8;
+    margin-top: 25px;
+    text-decoration: none;
+    color: inherit;
+}
+
+#login-btn-span{
+    font-size: 21px;
+    color: #F8F8F8;
+}
