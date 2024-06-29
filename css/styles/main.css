@@ -80,7 +80,8 @@
 }
 
 .content-item{
-    width: 150px;
+    width: 200px;
+    height: 310px;
     border-radius: 5px;
     background-color: #c5c1f3;
     box-shadow: 2px 2px 2px #d7d7d8;

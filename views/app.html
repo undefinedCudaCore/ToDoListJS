@@ -37,6 +37,29 @@
         </nav>
     </header>
     <main id="my-notebook-main" class="container">
+        <form id="notebook-form" style="display: none;">
+            <div  id="form-exit">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <h2 class="form-child">Create new note</h2>
+            <section id="form-select-type" class="form-child">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    <option value="projects">Projects</option>
+                    <option value="business">Business</option>
+                    <option value="personal">Personal</option>
+                </select>
+            </section>
+            <section id="form-add-title" class="form-child">
+                <label for="note_title">Title</label>
+                <input type="text" name="note_title" id="note_title" placeholder="Enter title..">
+            </section>
+            <section id="form-add-content"  class="form-child">
+                <label for="form_content">Content</label>
+                <textarea name="form_content" id="form_content" placeholder="Enter note text.."></textarea>
+            </section>
+            <input type="submit" value="Add note" id="notebook-form-submit" class="btn-hover color-7">
+        </form>
         <section id="content-header">
             <section class="types">
                 <span class="active">All</span>
@@ -60,7 +83,7 @@
             </section>
         </section>
         <section id="content">
-            <div class="content-item">
+            <!-- <div class="content-item">
                 <span>2024-01-01</span>
                 <h4><i class="fa-solid fa-right-to-bracket"></i>My note</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -159,7 +182,7 @@
                 <span>2024-01-01</span>
                 <h4><i class="fa-solid fa-right-to-bracket"></i>My note</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
+            </div> -->
         </section>
     </main>
     <footer id="my-notebook-footer" class="container box-shadow-off">
