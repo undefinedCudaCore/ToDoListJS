@@ -42,7 +42,7 @@ function loadNotes(url) {
                 newContent =  element.form_content.substring(0, maxParagraphLength) + "...";
                 htmlElement = `
                     <div class="content-item">
-                        <span>${element.creation_date}</span>
+                        <span>Id:${element.id}, Date: ${element.creation_date}</span>
                         <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
                         <p>${newContent}</p>
                         <div><span>Read more...</span></div>
@@ -51,7 +51,7 @@ function loadNotes(url) {
             } else {
                 htmlElement = `
                     <div class="content-item">
-                        <span>${element.creation_date}</span>
+                        <span>Id:${element.id}, Date: ${element.creation_date}</span>
                         <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
                         <p>${element.form_content}</p>
                     </div>

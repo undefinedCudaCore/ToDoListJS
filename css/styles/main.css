@@ -83,6 +83,7 @@
     width: 200px;
     height: 310px;
     border-radius: 5px;
+    border: 1px solid #b7b4db;
     background-color: #c5c1f3;
     box-shadow: 2px 2px 2px #d7d7d8;
     text-align: center;
