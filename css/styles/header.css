@@ -1,6 +1,6 @@
 #my-notebook-header .header-section{
     display: flex;
-    width: 33.33%;
+    width: 250px;
     margin: 2% 0 2% 0;
 }
 
@@ -37,6 +37,10 @@
     background-color: #9e8bf1;
     color: #f8f8f8;
     font-size: 20px;
+}
+
+#header-tasks:hover, #header-notes:hover{
+    background-color: #856fe9;
 }
 
 #header-login span{
