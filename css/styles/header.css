@@ -1,8 +1,19 @@
+#my-notebook-header{
+    justify-content: center;
+}
+
+#header-navigation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 #my-notebook-header .header-section{
     display: flex;
     width: 250px;
     margin: 2% 0 2% 0;
 }
+
 
 #header-search, #header-section-center, #header-section-right{
     display: flex;
