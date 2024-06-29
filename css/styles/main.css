@@ -84,6 +84,7 @@
     border-radius: 5px;
     background-color: #c5c1f3;
     box-shadow: 2px 2px 2px #d7d7d8;
+    text-align: center;
     transition: transform .2s;
 }
 
@@ -94,7 +95,9 @@
 .content-item span{
     width: 100%;
     padding: 5px;
-    font-size: 18px;
+    position:relative;
+    font-size: 14px;
+    /* margin-left: 50px; */
     font-family: "Playwrite IT Moderna", cursive;
     font-optical-sizing: auto;
     font-weight: 400;
