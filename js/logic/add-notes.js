@@ -49,6 +49,7 @@ function displayNoteBeforeGetUpdateFromDB(object){
     let sessionItem = sessionStorage.getItem("last-id");
   
     if(object.form_content.length > maxParagraphLength){
+
         newContent =  object.form_content.substring(0, maxParagraphLength) + "...";
         htmlElement = `
             <div class="content-item">

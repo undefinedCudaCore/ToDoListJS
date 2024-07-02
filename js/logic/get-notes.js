@@ -10,6 +10,7 @@ const options = {
 };
 const noteElement = document.querySelector("#content"); //Is this one good here
 
+
 function loadNotes(url) {
     let htmlElement = "";
 
@@ -39,6 +40,7 @@ function loadNotes(url) {
 
             
             if(element.form_content.length > maxParagraphLength){
+           
                 newContent =  element.form_content.substring(0, maxParagraphLength) + "...";
                 htmlElement = `
                 <div class="content-item">
@@ -69,7 +71,6 @@ function loadNotes(url) {
     .catch((error) => {
         console.error("Error: ", error);
     });
-
 };
 
 export default loadNotes;

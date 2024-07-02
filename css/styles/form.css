@@ -106,5 +106,8 @@ option, select{
 }
 
 #form-exit{
-    margin-left: 90%
+    position: absolute;
+    z-index: 2;
+    margin-bottom: 80%;
+    margin-left: 90%;
 }
