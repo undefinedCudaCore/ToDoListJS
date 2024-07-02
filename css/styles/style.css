@@ -32,6 +32,10 @@ body{
     height: 2em;
     color: #4c467a;
 }
+.svg-inline--fa:hover {
+    height: 2em;
+    color: #020202;
+}
 
 span, p{
     word-break:keep-all;
