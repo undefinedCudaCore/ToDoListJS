@@ -11,6 +11,8 @@ const options = {
 const noteElement = document.querySelector("#content"); //Is this one good here
 
 function loadNotes(url) {
+    let htmlElement = "";
+
     fetch(url, options)
     .then((response) => {
         if(!response.ok){
@@ -25,18 +27,13 @@ function loadNotes(url) {
         if(noteData.data.length === 0){
             noteElement.innerHTML = 
             `
-                <div class="content-item">
-                    <p>List is empty...</p>
-                </div>
+                    <p class="empty-list">List is empty...</p>
             `;
             return;
         };
-        
-        
+                
         noteData.data.forEach(element => {
-     
             let newContent = element.form_content.toString();
-            let htmlElement = "";
 
             if(element.form_content.length > maxParagraphLength){
                 newContent =  element.form_content.substring(0, maxParagraphLength) + "...";
@@ -56,7 +53,7 @@ function loadNotes(url) {
                         <p>${element.form_content}</p>
                     </div>
                 `;
-            }
+            };
 
             noteHTML += htmlElement;
         });
@@ -66,6 +63,7 @@ function loadNotes(url) {
     .catch((error) => {
         console.error("Error: ", error);
     });
+
 };
 
 export default loadNotes;

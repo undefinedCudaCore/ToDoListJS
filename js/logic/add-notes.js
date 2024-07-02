@@ -1,7 +1,6 @@
 "USE STRICT";
 
 import getTodaysDate from '../logic/todays-date.js';
-import loadNotes from '../logic/get-notes.js';
 
 const myNotebookForm = document.querySelector("#notebook-form");
 const notebookForm = document.querySelector("#notebook-form");
@@ -38,14 +37,57 @@ function sendData(url) {
     .catch((error) => {
         console.error("Error: ", error);
     });
+
+    return obj;
 };
+
+function displayNoteBeforeGetUpdateFromDB(object){
+    console.log(object);
+    const maxParagraphLength = 120;
+    const noteElement = document.querySelector("#content");
+    let newContent = object.form_content.toString();
+    let htmlElement = "";
+    console.log(htmlElement);
+  
+    console.log("IM HERE");
+    if(object.form_content.length > maxParagraphLength){
+        newContent =  object.form_content.substring(0, maxParagraphLength) + "...";
+        htmlElement = `
+            <div class="content-item">
+                <span>Id:${object.id}, Date: ${object.creation_date}</span>
+                <h4><i class="fa-solid fa-right-to-bracket"></i>${object.note_title}</h4>
+                <p>${object.id}</p>
+                <div><span>Read more...</span></div>
+            </div>
+        `;
+    } else {
+        htmlElement += `
+            <div class="content-item">
+                <span>Id:${object.id}, Date: ${object.creation_date}</span>
+                <h4><i class="fa-solid fa-right-to-bracket"></i>${object.note_title}</h4>
+                <p>${object.form_content}</p>
+            </div>
+        `;
+    };
+
+    noteElement.innerHTML += htmlElement;
+}
 
 function addNotes(urlGiven){
     notebookFormSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        sendData(urlGiven);
+        let obj = sendData(urlGiven);
+        let isThereEmptyList = document.querySelector('.empty-lis') !== null;
+
         document.querySelector("#note_title").value = "";
         document.querySelector("#form_content").value = "";
+
+        if(!isThereEmptyList){
+
+            document.querySelector(".empty-list").style.display = "none";
+        }
+
+        displayNoteBeforeGetUpdateFromDB(obj);
         myNotebookForm.style.display = "none";
     });
 };
