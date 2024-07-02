@@ -1,6 +1,6 @@
 "USE STRICT";
 
-const maxParagraphLength = 120;
+const maxParagraphLength = 100;
 const options = {
     method: "GET",
     headers: {
@@ -23,6 +23,8 @@ function loadNotes(url) {
     })
     .then((noteData) => {
         let noteHTML = "";
+        console.log(noteData.data);
+        let dataArray = noteData.data.sort((a, b) => a.id - b.id);
 
         if(noteData.data.length === 0){
             noteElement.innerHTML = 
@@ -32,31 +34,35 @@ function loadNotes(url) {
             return;
         };
                 
-        noteData.data.forEach(element => {
+        dataArray.forEach(element => {
             let newContent = element.form_content.toString();
 
+            
             if(element.form_content.length > maxParagraphLength){
                 newContent =  element.form_content.substring(0, maxParagraphLength) + "...";
                 htmlElement = `
-                    <div class="content-item">
-                        <span>Id:${element.id}, Date: ${element.creation_date}</span>
-                        <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
-                        <p>${newContent}</p>
-                        <div><span>Read more...</span></div>
-                    </div>
+                <div class="content-item">
+                <span>Id:${element.id}, Date: ${element.creation_date}</span>
+                <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
+                <p>${newContent}</p>
+                <div><span>Read more...</span></div>
+                </div>
                 `;
             } else {
                 htmlElement = `
-                    <div class="content-item">
-                        <span>Id:${element.id}, Date: ${element.creation_date}</span>
-                        <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
-                        <p>${element.form_content}</p>
-                    </div>
+                <div class="content-item">
+                <span>Id:${element.id}, Date: ${element.creation_date}</span>
+                <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
+                <p>${element.form_content}</p>
+                </div>
                 `;
             };
-
             noteHTML += htmlElement;
         });
+
+        let dataLenth = noteData.data.length;
+        console.log(noteData.data[noteData.data.length-1].id);
+        sessionStorage.setItem("last-id", noteData.data[noteData.data.length-1].id + 1);
 
         noteElement.innerHTML = noteHTML;
     })

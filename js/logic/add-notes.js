@@ -42,28 +42,26 @@ function sendData(url) {
 };
 
 function displayNoteBeforeGetUpdateFromDB(object){
-    console.log(object);
-    const maxParagraphLength = 120;
+    const maxParagraphLength = 100;
     const noteElement = document.querySelector("#content");
     let newContent = object.form_content.toString();
     let htmlElement = "";
-    console.log(htmlElement);
+    let sessionItem = sessionStorage.getItem("last-id");
   
-    console.log("IM HERE");
     if(object.form_content.length > maxParagraphLength){
         newContent =  object.form_content.substring(0, maxParagraphLength) + "...";
         htmlElement = `
             <div class="content-item">
-                <span>Id:${object.id}, Date: ${object.creation_date}</span>
+                <span>Id:${sessionItem}, Date: ${object.creation_date}</span>
                 <h4><i class="fa-solid fa-right-to-bracket"></i>${object.note_title}</h4>
-                <p>${object.id}</p>
+                <p>${newContent}</p>
                 <div><span>Read more...</span></div>
             </div>
         `;
     } else {
         htmlElement += `
             <div class="content-item">
-                <span>Id:${object.id}, Date: ${object.creation_date}</span>
+                <span>Id:${sessionItem}, Date: ${object.creation_date}</span>
                 <h4><i class="fa-solid fa-right-to-bracket"></i>${object.note_title}</h4>
                 <p>${object.form_content}</p>
             </div>
@@ -77,18 +75,19 @@ function addNotes(urlGiven){
     notebookFormSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
         let obj = sendData(urlGiven);
-        let isThereEmptyList = document.querySelector('.empty-lis') !== null;
-
+        let isThereEmptyList = document.querySelector('.empty-list') !== null;
+        
         document.querySelector("#note_title").value = "";
         document.querySelector("#form_content").value = "";
-
+        
         if(!isThereEmptyList){
-
-            document.querySelector(".empty-list").style.display = "none";
+            
+            // document.querySelector(".empty-list").style.display = "none";
         }
-
+        
         displayNoteBeforeGetUpdateFromDB(obj);
         myNotebookForm.style.display = "none";
+        sessionStorage.removeItem("last-id");
     });
 };
  
