@@ -56,7 +56,6 @@ function loadNotes(url) {
             noteHTML += htmlElement;
         });
 
-        let dataLenth = noteData.data.length;
         sessionStorage.setItem("last-id", noteData.data[noteData.data.length-1].id + 1);
 
         noteElement.innerHTML = noteHTML;

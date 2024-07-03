@@ -49,12 +49,12 @@ function sendData(url) {
 };
 
 function displayNoteBeforeGetUpdateFromDB(object){
+    console.log(document.querySelector(`#id-${object.id}`));
     let itemCheck = document.querySelector(`#id-${object.id}`) !== null;
 
     if(itemCheck){
         document.querySelector(`#id-${object.id}`).style.display = "none";
-        document.querySelector(`.empty-list`).style.display = "inline-block";
-    };
+    }
 };
 
 function removeNote(urlGiven){

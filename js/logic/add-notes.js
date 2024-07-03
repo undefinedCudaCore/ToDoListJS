@@ -79,8 +79,6 @@ function addNote(urlGiven){
         e.preventDefault();
         let obj = sendData(urlGiven);
 
-        document.querySelector(`.empty-list`).style.display = "none";
-
         displayNoteBeforeGetUpdateFromDB(obj);
         myNotebookForm.style.display = "none";
         // sessionStorage.removeItem("last-id");
