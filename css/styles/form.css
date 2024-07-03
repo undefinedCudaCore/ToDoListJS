@@ -17,7 +17,7 @@
     align-items: center
 }
 
-#notebook-form h2, #notebook-form-update h2{
+#notebook-form h2, #notebook-form-update h2, #notebook-form-delete h2{
     font-size: 30px;
     font-weight: 600;
     color: #584ba0;

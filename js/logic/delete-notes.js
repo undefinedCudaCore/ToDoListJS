@@ -8,7 +8,7 @@ function sendData(url) {
     let obj = {};
 
     data.forEach((value, key) => {
-        obj[key] = value;
+        obj[key] = value.trim();
     });
 
     let getOptions = {
@@ -32,24 +32,29 @@ function sendData(url) {
         return response.json();
     })
     .then((data) => {
-        return fetch(url + data.id, deleteOptions);
+        //Executes only if entered existing id
+        if(data.id){
+            return fetch(url + data.id, deleteOptions);
+        }
+        else {
+            return;
+        }
     })
     .then((response) => {
         if(!response.ok){
             throw new Error("Server response wasnt't OK");
         } else {
-            console.log("Server response was OK");
+            // console.log("Server response was OK");
         };
     })
     .catch((error) => {
-        console.error("Error: ", error);
+        console.log("Error: ", error);
     });
 
     return obj;
 };
 
 function displayNoteBeforeGetUpdateFromDB(object){
-    console.log(document.querySelector(`#id-${object.id}`));
     let itemCheck = document.querySelector(`#id-${object.id}`) !== null;
 
     if(itemCheck){

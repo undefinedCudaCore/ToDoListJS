@@ -61,7 +61,7 @@ function loadNotes(url) {
         noteElement.innerHTML = noteHTML;
     })
     .catch((error) => {
-        console.error("Error: ", error);
+        console.log("Error: ", error);
     });
 };
 
