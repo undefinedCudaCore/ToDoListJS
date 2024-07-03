@@ -24,38 +24,32 @@ function loadNotes(url) {
     })
     .then((noteData) => {
         let noteHTML = "";
-        console.log(noteData.data);
         let dataArray = noteData.data.sort((a, b) => a.id - b.id);
 
         if(noteData.data.length === 0){
-            noteElement.innerHTML = 
-            `
-                    <p class="empty-list">List is empty...</p>
-            `;
-            return;
+            document.querySelector(`.empty-list`).style.display = "inline-block";
         };
                 
         dataArray.forEach(element => {
             let newContent = element.form_content.toString();
-
             
             if(element.form_content.length > maxParagraphLength){
            
                 newContent =  element.form_content.substring(0, maxParagraphLength) + "...";
                 htmlElement = `
-                <div class="content-item">
-                <span>Id:${element.id}, Date: ${element.creation_date}</span>
-                <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
-                <p>${newContent}</p>
-                <div><span>Read more...</span></div>
+                <div class="content-item" id="id-${element.id}">
+                    <span id="id-span-${element.id}">Id:${element.id}, Date: ${element.creation_date}</span>
+                    <h4 id="id-h4-${element.id}"><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
+                    <p id="id-p-${element.id}">${newContent}</p>
+                    <div id="id-read-more-${element.id}"><span>Read more...</span></div>
                 </div>
                 `;
             } else {
                 htmlElement = `
-                <div class="content-item">
-                <span>Id:${element.id}, Date: ${element.creation_date}</span>
-                <h4><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
-                <p>${element.form_content}</p>
+                <div class="content-item" id="id-${element.id}">
+                    <span id="id-span-${element.id}">Id:${element.id}, Date: ${element.creation_date}</span>
+                    <h4 id="id-h4-${element.id}"><i class="fa-solid fa-right-to-bracket"></i>${element.note_title}</h4>
+                    <p id="id-p-${element.id}">${element.form_content}</p>
                 </div>
                 `;
             };
@@ -63,7 +57,6 @@ function loadNotes(url) {
         });
 
         let dataLenth = noteData.data.length;
-        console.log(noteData.data[noteData.data.length-1].id);
         sessionStorage.setItem("last-id", noteData.data[noteData.data.length-1].id + 1);
 
         noteElement.innerHTML = noteHTML;

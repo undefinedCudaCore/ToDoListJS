@@ -1,4 +1,4 @@
-#notebook-form{
+#notebook-form, #notebook-form-update, #notebook-form-delete{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,7 +17,7 @@
     align-items: center
 }
 
-#notebook-form h2{
+#notebook-form h2, #notebook-form-update h2{
     font-size: 30px;
     font-weight: 600;
     color: #584ba0;
@@ -105,7 +105,7 @@ option, select{
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 
-#form-exit{
+#form-exit, #update-form-exit{
     position: absolute;
     z-index: 2;
     margin-bottom: 80%;
