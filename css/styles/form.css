@@ -105,9 +105,8 @@ option, select{
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 
-#form-exit, #update-form-exit{
-    position: absolute;
-    z-index: 2;
-    margin-bottom: 80%;
-    margin-left: 90%;
+#form-exit, #update-form-exit, #delete-form-exit{
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }
