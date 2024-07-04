@@ -1,6 +1,7 @@
 "USE STRICT";
 
 import getTodaysDate from '../logic/todays-date.js';
+import setLocalStorageArray from '../logic/helpers/saveLastDeletedNoteId.js';
 
 const myNotebookForm = document.querySelector("#notebook-form");
 const notebookForm = document.querySelector("#notebook-form");
@@ -14,7 +15,6 @@ function sendData(url) {
     data.forEach((value, key) => {
         obj[key] = value.trim();
     });
-    
     obj["type_all"] = "true";
     obj['creation_date'] = getTodaysDate();
 
@@ -54,9 +54,13 @@ function sendData(url) {
             return response.json();
         };
     })
+    .then((data) => {
+        setLocalStorageArray(data);
+    })
     .catch((error) => {
         console.log("Error: ", error);
     });
+
 
     return obj;
 };
@@ -66,7 +70,10 @@ function displayNoteBeforeGetUpdateFromDB(object){
     const noteElement = document.querySelector("#content");
     let newContent = object.form_content.toString();
     let htmlElement = "";
-    let sessionItem = sessionStorage.getItem("last-id");
+    //gets local storage array
+    let localStorageArray = JSON.parse(localStorage.getItem('note-id')) || [];
+    //gets last id from local storage and + 1
+    let sessionItem =  localStorageArray[localStorageArray.length-1] + 1;
   
     if(object.form_content.length > maxParagraphLength){
 
