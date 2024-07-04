@@ -9,9 +9,13 @@ function myNotebookEvents(){
     const addItem = document.querySelector("#add-note");
     const updateItem = document.querySelector("#edit-note");
     const deleteItem = document.querySelector("#delete-note");
-    const exitForm = document.querySelector("#form-exit")
-    const exitUpdateForm = document.querySelector("#update-form-exit")
-    const exitDeleteForm = document.querySelector("#delete-form-exit")
+    const exitForm = document.querySelector("#form-exit");
+    const exitUpdateForm = document.querySelector("#update-form-exit");
+    const exitDeleteForm = document.querySelector("#delete-form-exit");
+    const allNotesBtn = document.querySelector("#all-notes");
+    const allProjectNotesBtn = document.querySelector("#all-project-notes");
+    const allBusinessNotesBtn = document.querySelector("#all-business-notes");
+    const allPersonalNotesBtn = document.querySelector("#all-personal-notes");
 
     addItem.addEventListener('click', () => {
 
@@ -41,8 +45,37 @@ function myNotebookEvents(){
     exitUpdateForm.addEventListener('click', () => {
         myNotebookFormUpdate.style.display = "none";
     });
+
     exitDeleteForm.addEventListener('click', () => {
         myNotebookFormDelete.style.display = "none";
+    });
+
+    allProjectNotesBtn.addEventListener('click', () => {
+        allNotesBtn.className = "";
+        allProjectNotesBtn.className = "active";
+        allBusinessNotesBtn.className = "";
+        allPersonalNotesBtn.className = "";
+    });
+
+    allNotesBtn.addEventListener('click', () => {
+        allNotesBtn.className = "active";
+        allProjectNotesBtn.className = "";
+        allBusinessNotesBtn.className = "";
+        allPersonalNotesBtn.className = "";
+    });
+
+    allBusinessNotesBtn.addEventListener('click', () => {
+        allNotesBtn.className = "";
+        allProjectNotesBtn.className = "";
+        allBusinessNotesBtn.className = "active";
+        allPersonalNotesBtn.className = "";
+    });
+    
+    allPersonalNotesBtn.addEventListener('click', () => {
+        allNotesBtn.className = "";
+        allProjectNotesBtn.className = "";
+        allBusinessNotesBtn.className = "";
+        allPersonalNotesBtn.className = "active";
     });
 };
 
