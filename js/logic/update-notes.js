@@ -2,17 +2,17 @@
 
 import getTodaysDate from '../logic/todays-date.js';
 
-const myNotebookForm = document.querySelector("#notebook-form-update");
-const notebookFormSubmitBtn = document.querySelector("#update-notebook-form-submit");
 const noteTitleLength = 45;
 
 function sendData(url) {
+    const myNotebookForm = document.querySelector("#notebook-form-update");
     let data = new FormData(myNotebookForm);
     let obj = {};
 
     data.forEach((value, key) => {
         obj[key] = value.trim();
     });
+    obj["type_all"] = "true";
     obj['creation_date'] = getTodaysDate();
 
     // Checks for symbols in input
@@ -92,6 +92,9 @@ function displayNoteBeforeGetUpdateFromDB(object){
 };
 
 function updateNote(urlGiven){
+    const notebookFormSubmitBtn = document.querySelector("#update-notebook-form-submit");
+    const myNotebookForm = document.querySelector("#notebook-form-update");
+
     notebookFormSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
         let obj = sendData(urlGiven);

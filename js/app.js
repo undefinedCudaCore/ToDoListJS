@@ -3,15 +3,19 @@
 // imports
 
 import myNotebookEvents from './logic/events.js';
+import createAddNoteForm from './logic/html-build/forms/create-add-item-form.js';
+import createUpdateNoteForm from './logic/html-build/forms/create-update-item-form.js';
+import createDeleteNoteForm from './logic/html-build/forms/create-delete-item-form.js';
 import loadNotes from './logic/get-notes.js';
 import addNote from './logic/add-notes.js';
 import updateNote from './logic/update-notes.js';
 import removeNote from './logic/delete-notes.js';
 
 
-// create
-
-//
+// create HTML
+createAddNoteForm();
+createUpdateNoteForm();
+createDeleteNoteForm();
 
 // call up function
 

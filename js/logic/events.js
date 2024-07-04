@@ -1,5 +1,7 @@
 "USE STRICT";
 
+import createAddNoteForm from '../logic/html-build/forms/create-add-item-form.js';
+
 function myNotebookEvents(){
     const myNotebookFormAdd = document.querySelector("#notebook-form");
     const myNotebookFormUpdate = document.querySelector("#notebook-form-update");
@@ -12,23 +14,22 @@ function myNotebookEvents(){
     const exitDeleteForm = document.querySelector("#delete-form-exit")
 
     addItem.addEventListener('click', () => {
-        document.querySelector("#note_title").value = "";
-        document.querySelector("#form_content").value = "";
+
+        document.querySelector(".form-add-title-input").value = "";
+        document.querySelector(".form-add-content-input").value = "";
         
         myNotebookFormAdd.style.display = "flex";
     });
     
     updateItem.addEventListener('click', () => {
-        document.querySelector("#id").value = "";
-        document.querySelector("#note_title").value = "";
-        document.querySelector("#form_content").value = "";
+        document.querySelector(".form-update-id-input").value = "";
+        document.querySelector(".form-update-title-input").value = "";
+        document.querySelector(".form-update-content-input").value = "";
         myNotebookFormUpdate.style.display = "flex";
     });
     
     deleteItem.addEventListener('click', () => {  
-        document.querySelector("#id").value = "";
-        document.querySelector("#note_title").value = "";
-        document.querySelector("#form_content").value = "";
+        document.querySelector(".form-delete-id-input").value = "";
 
         myNotebookFormDelete.style.display = "flex";
     });

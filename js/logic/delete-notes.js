@@ -1,9 +1,10 @@
 "USE STRICT";
 
-const myNotebookForm = document.querySelector("#notebook-form-delete");
-const notebookFormSubmitBtn = document.querySelector("#delete-notebook-form-submit");
+
+
 
 function sendData(url) {
+    const myNotebookForm = document.querySelector("#notebook-form-delete");
     let data = new FormData(myNotebookForm);
     let obj = {};
 
@@ -63,6 +64,9 @@ function displayNoteBeforeGetUpdateFromDB(object){
 };
 
 function removeNote(urlGiven){
+    const myNotebookForm = document.querySelector("#notebook-form-delete");
+    const notebookFormSubmitBtn = document.querySelector("#delete-notebook-form-submit");
+
     notebookFormSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
         let obj = sendData(urlGiven);

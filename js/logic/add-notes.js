@@ -3,12 +3,12 @@
 import getTodaysDate from '../logic/todays-date.js';
 import setLocalStorageArray from '../logic/helpers/saveLastDeletedNoteId.js';
 
-const myNotebookForm = document.querySelector("#notebook-form");
-const notebookForm = document.querySelector("#notebook-form");
-const notebookFormSubmitBtn = document.querySelector("#notebook-form-submit");
+
+
 const noteTitleLength = 45;
 
 function sendData(url) {
+    const notebookForm = document.querySelector("#notebook-form");
     let data = new FormData(notebookForm);
     let obj = {};
 
@@ -102,6 +102,9 @@ function displayNoteBeforeGetUpdateFromDB(object){
 };
 
 function addNote(urlGiven){
+    const notebookFormSubmitBtn = document.querySelector("#notebook-form-submit");
+    const myNotebookForm = document.querySelector("#notebook-form");
+    
     notebookFormSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
         let obj = sendData(urlGiven);

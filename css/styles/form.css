@@ -1,7 +1,7 @@
 #notebook-form, #notebook-form-update, #notebook-form-delete{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     border: 0.5px outset #f8f8f8;
     box-shadow: 10px 10px 10px #8b89a1;
@@ -21,6 +21,18 @@
     font-size: 30px;
     font-weight: 600;
     color: #584ba0;
+}
+
+#notebook-form-delete h2{
+    margin-top: 10%;
+}
+
+#notebook-form-delete #delete-notebook-form-submit{
+    margin-bottom: 10%;
+}
+
+#notebook-form-delete #id{
+    margin-top: 5%;
 }
 
 .form-child{
