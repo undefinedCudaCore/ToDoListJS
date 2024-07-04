@@ -11,7 +11,7 @@ const options = {
 const noteElement = document.querySelector("#content"); //Is this one good here
 
 
-function loadProjectNotes(url) {
+function loadBusinessNotes(url) {
     let htmlElement = "";
 
     fetch(url, options)
@@ -28,7 +28,7 @@ function loadProjectNotes(url) {
         let projectsDataArray = [];
 
         for (let i = 0; i < dataArray.length; i++) {
-            if(dataArray[i].type === "projects"){
+            if(dataArray[i].type === "business"){
                 projectsDataArray.push(dataArray[i]);
             }
             
@@ -73,4 +73,4 @@ function loadProjectNotes(url) {
     });
 };
 
-export default loadProjectNotes;
+export default loadBusinessNotes;

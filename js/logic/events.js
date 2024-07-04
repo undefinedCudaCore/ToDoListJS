@@ -1,6 +1,9 @@
 "USE STRICT";
 
-import createAddNoteForm from '../logic/html-build/forms/create-add-item-form.js';
+import loadNotes from './get-notes.js';
+import loadProjectNotes from './note-display/get-project-notes.js';
+import loadBusinessNotes from './note-display/get-business-notes.js';
+import loadPersonalNotes from './note-display/get-personal-notes.js';
 
 function myNotebookEvents(){
     const myNotebookFormAdd = document.querySelector("#notebook-form");
@@ -18,6 +21,11 @@ function myNotebookEvents(){
     const allPersonalNotesBtn = document.querySelector("#all-personal-notes");
 
     addItem.addEventListener('click', () => {
+        loadNotes("https://testapi.io/api/teklithuania/resource/notes");
+        allNotesBtn.className = "active";
+        allProjectNotesBtn.className = "";
+        allBusinessNotesBtn.className = "";
+        allPersonalNotesBtn.className = "";
 
         document.querySelector(".form-add-title-input").value = "";
         document.querySelector(".form-add-content-input").value = "";
@@ -26,6 +34,12 @@ function myNotebookEvents(){
     });
     
     updateItem.addEventListener('click', () => {
+        loadNotes("https://testapi.io/api/teklithuania/resource/notes");
+        allNotesBtn.className = "active";
+        allProjectNotesBtn.className = "";
+        allBusinessNotesBtn.className = "";
+        allPersonalNotesBtn.className = "";
+        
         document.querySelector(".form-update-id-input").value = "";
         document.querySelector(".form-update-title-input").value = "";
         document.querySelector(".form-update-content-input").value = "";
@@ -49,33 +63,38 @@ function myNotebookEvents(){
     exitDeleteForm.addEventListener('click', () => {
         myNotebookFormDelete.style.display = "none";
     });
+    
+    allNotesBtn.addEventListener('click', () => {
+        allNotesBtn.className = "active";
+        allProjectNotesBtn.className = "";
+        allBusinessNotesBtn.className = "";
+        allPersonalNotesBtn.className = "";
+
+        loadNotes("https://testapi.io/api/teklithuania/resource/notes");
+    });
 
     allProjectNotesBtn.addEventListener('click', () => {
         allNotesBtn.className = "";
         allProjectNotesBtn.className = "active";
         allBusinessNotesBtn.className = "";
         allPersonalNotesBtn.className = "";
+        loadProjectNotes("https://testapi.io/api/teklithuania/resource/notes");
     });
-
-    allNotesBtn.addEventListener('click', () => {
-        allNotesBtn.className = "active";
-        allProjectNotesBtn.className = "";
-        allBusinessNotesBtn.className = "";
-        allPersonalNotesBtn.className = "";
-    });
-
+    
     allBusinessNotesBtn.addEventListener('click', () => {
         allNotesBtn.className = "";
         allProjectNotesBtn.className = "";
         allBusinessNotesBtn.className = "active";
         allPersonalNotesBtn.className = "";
+        loadBusinessNotes("https://testapi.io/api/teklithuania/resource/notes");
     });
-    
+
     allPersonalNotesBtn.addEventListener('click', () => {
         allNotesBtn.className = "";
         allProjectNotesBtn.className = "";
         allBusinessNotesBtn.className = "";
         allPersonalNotesBtn.className = "active";
+        loadPersonalNotes("https://testapi.io/api/teklithuania/resource/notes");
     });
 };
 
