@@ -3,8 +3,6 @@
 import getTodaysDate from '../logic/todays-date.js';
 import setLocalStorageArray from '../logic/helpers/saveLastDeletedNoteId.js';
 
-
-
 const noteTitleLength = 45;
 
 function sendData(url) {

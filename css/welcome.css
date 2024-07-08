@@ -1,5 +1,6 @@
 @import './styles/reset.css';
 @import './styles/style.css';
+@import './styles/form.css';
 
 #welcome-container{
     display: inline-block;
@@ -35,7 +36,7 @@
     word-break:keep-all;
 }
 
-#login-btn{
+#login-btn, #register-btn{
     text-align: center;
     width: 30%;
     height: 35px;
@@ -48,7 +49,23 @@
     color: inherit;
 }
 
-#login-btn-span{
+#login-btn:hover, #register-btn:hover{
+    background-color: #6d66ac;
+}
+
+#login-btn-span,  #register-btn-span{
     font-size: 21px;
     color: #F8F8F8;
+}
+
+#inputAlert{
+    border: 1px solid rgba(255, 0, 0, 0.493);
+    background-color: rgba(255, 0, 0, 0.192);
+    border-radius: 5px;
+    word-break: keep-all;
+}
+
+#inputAlerText{
+    font-size: 18px;
+    color: rgba(124, 3, 3, 0.753);
 }

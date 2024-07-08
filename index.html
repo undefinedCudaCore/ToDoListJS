@@ -8,6 +8,43 @@
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/welcome.css">
     <script src="./js/welcome.js" defer></script>
+    <script src="./js/logic/authentication/register.js" defer></script>
 </head>
-<body></body>
+<body>
+    <form id="registrationForm" style="display: none; height: 80%;">
+        <div  id="register-form-exit"><i class="fa-solid fa-circle-xmark"></i></div>
+        <h2>Fill the form</h2>
+        <div id="inputAlert" class="form-child" style="display: none;">
+            <h3 id="inputAlertText"></h3>
+        </div>
+        <div class="form-child ">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required>
+        </div>
+        
+        <div class="form-child">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <div class="form-child">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-child">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required>
+        </div>
+    
+        <div class="form-child">
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required>
+        </div>
+        
+        <input type="submit" value="Register" id="registrationBtn" class="btn-hover color-7">
+    </form>
+    <script src="../js/logic/all.js"></script>
+    <script src="./js/logic/authentication/validation/input-validation.js" ></script>
+</body>
 </html>
