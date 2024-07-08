@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/welcome.css">
     <script src="./js/welcome.js" defer></script>
     <script src="./js/logic/authentication/register.js" defer></script>
+    <script src="./js/logic/authentication/login.js" defer></script>
 </head>
 <body>
     <form id="registrationForm" style="display: none; height: 80%;">
@@ -38,11 +39,30 @@
         </div>
     
         <div class="form-child">
-            <label for="surname">Surname:</label>
-            <input type="text" id="surname" name="surname" required>
+            <label for="surename">Surname:</label>
+            <input type="text" id="surename" name="surename" required>
         </div>
         
         <input type="submit" value="Register" id="registrationBtn" class="btn-hover color-7">
+    </form>
+
+    <form id="loginForm" style="display: none; height: 40%;">
+        <div  id="login-form-exit"><i class="fa-solid fa-circle-xmark"></i></div>
+        <h2>Enter credentials</h2>
+        <div id="inputAlert" class="form-child" style="display: none;">
+            <h3 id="inputAlertText"></h3>
+        </div>
+        <div class="form-child ">
+            <label for="login_username">Username:</label><br>
+            <input type="text" id="login_username" name="login_username" required>
+        </div>
+        
+        <div class="form-child">
+            <label for="login_password">Password:</label><br>
+            <input type="password" id="login_password" name="login_password" required>
+        </div>
+                
+        <input type="submit" value="Login" id="loginBtn" class="btn-hover color-7">
     </form>
     <script src="../js/logic/all.js"></script>
     <script src="./js/logic/authentication/validation/input-validation.js" ></script>

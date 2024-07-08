@@ -8,13 +8,7 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const email = document.getElementById('email');
 const userFirstName = document.getElementById('name');
-const surname = document.getElementById('surname');
-
-
-
-
-
-
+const surname = document.getElementById('surename');
 
 // Checks for symbols in input
 const regex = /[#$%^&*()\[\]{};':"\\|<>\/?]/g;

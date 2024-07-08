@@ -20,7 +20,6 @@ registerSpan.id = "register-btn-span";
 
 //Assign options of elements
 greeting.textContent = "Welcome to My Notebook";
-loginBtn.href = "./views/app.html";
 loginSpan.textContent = "Login";
 registerSpan.textContent = "Register";
 

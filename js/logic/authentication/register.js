@@ -30,12 +30,10 @@ function sendUserData(url) {
         if(!response.ok){
             throw new Error("Server response wasnt't OK");
         } else {
+            window.location.href = "./views/app.html";
             return response.json();
         };
     })
-    .then((data) => {
-        setLocalStorageArray(data);
-    });
 };
 
 function addUser(urlGiven){
@@ -44,7 +42,7 @@ function addUser(urlGiven){
     
     regBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        let obj = sendUserData(urlGiven);
+        sendUserData(urlGiven);
 
         registrationForm.style.display = "none";
     });

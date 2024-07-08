@@ -19,6 +19,11 @@ function myNotebookEvents(){
     const allProjectNotesBtn = document.querySelector("#all-project-notes");
     const allBusinessNotesBtn = document.querySelector("#all-business-notes");
     const allPersonalNotesBtn = document.querySelector("#all-personal-notes");
+    const logOut = document.querySelector("#logOut");
+
+    logOut.addEventListener('click', () => {
+        window.location.href = "../index.html";
+    });
 
     addItem.addEventListener('click', () => {
         loadNotes("https://testapi.io/api/teklithuania/resource/notes");

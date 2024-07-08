@@ -1,4 +1,4 @@
-#notebook-form, #notebook-form-update, #notebook-form-delete, #registrationForm{
+#notebook-form, #notebook-form-update, #notebook-form-delete, #registrationForm, #loginForm{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -17,7 +17,7 @@
     align-items: center
 }
 
-#notebook-form h2, #notebook-form-update h2, #notebook-form-delete h2, #registrationForm h2{
+#notebook-form h2, #notebook-form-update h2, #notebook-form-delete h2, #registrationForm h2, #loginForm H2{
     font-size: 30px;
     font-weight: 600;
     color: #584ba0;
@@ -117,7 +117,7 @@ option, select{
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 
-#form-exit, #update-form-exit, #delete-form-exit, #register-form-exit{
+#form-exit, #update-form-exit, #delete-form-exit, #register-form-exit, #login-form-exit{
     position: fixed;
     top: 10px;
     right: 10px;
