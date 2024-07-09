@@ -14,7 +14,6 @@ loginFormExit.addEventListener('click', () =>{
     loginForm.style.display = "none";
 });
 
-const maxParagraphLength = 100;
 const options = {
     method: "GET",
     headers: {
@@ -47,10 +46,6 @@ function getUserCredentials(url) {
         for (const element of noteData.data) {
             if(obj.login_username === element.username && obj.login_password === element.password){
                 window.location.href = "./views/app.html";
-                break;
-            }
-            else{
-                alert("Wrong user credentials, please try again!!!");
                 break;
             }
         }

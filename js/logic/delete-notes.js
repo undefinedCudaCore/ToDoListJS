@@ -1,8 +1,5 @@
 "USE STRICT";
 
-
-
-
 function sendData(url) {
     const myNotebookForm = document.querySelector("#notebook-form-delete");
     let data = new FormData(myNotebookForm);
