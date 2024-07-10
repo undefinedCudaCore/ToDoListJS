@@ -1,3 +1,5 @@
+"USE STRICT";
+
 const usernameLength = 20;
 const passwordLength = 20;
 
